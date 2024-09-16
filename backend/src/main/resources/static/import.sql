@@ -1,7 +1,8 @@
-INSERT INTO `users` (`id`, `email`, `password`, `token`)
-VALUES (unhex(replace(uuid(), '-', '')), 'baroniusokay@gmail.com',
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `token`, `role`)
+VALUES (unhex(replace(uuid(), '-', '')), 'baron', 'baroniusokay@gmail.com',
         '$2a$10$EfPJyzhtoYfnu/c9kpL1vuyFIIxue.E1dDYMkHFwptbKSQ4iWiBYC',
-        'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXJvbml1c29rYXlAZ21haWwuY29tIiwiaWF0IjoxNzAzMjcxNDAwfQ.4zV2TGcPW-MRalO1t8YqufmhsnJiuZlacU2U9OM5Iy4');
+        'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXJAZ21haWwuY29tIiwiaWF0IjoxNzI2NDk4ODcxfQ.DnStYFvNhqegkwl1yXtKX49PgUP3zLBG-s_0r5u_zD8',
+        1);
 SET @user_id = (SELECT id
                 FROM `users`
                 WHERE email = 'baroniusokay@gmail.com');
