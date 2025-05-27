@@ -4,8 +4,6 @@ export const baseQuery = fetchBaseQuery({
     baseUrl: import.meta.env.VITE_APP_BASE_URL,
     prepareHeaders: (headers) => {
         const token = localStorage.getItem("token");
-        // TODO: remove this
-        // const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYXJAZ21haWwuY29tIiwiaWF0IjoxNzI2NDk4ODcxfQ.DnStYFvNhqegkwl1yXtKX49PgUP3zLBG-s_0r5u_zD8";
         if (token) {
             headers.set("Authorization", `Bearer ${token}`);
         }
